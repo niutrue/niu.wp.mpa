@@ -80,3 +80,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 41.单页面单js。单页面，多js。多页面，多js
 
 42.编译之前清理dist文件夹 clean-webpack-plugin  开始不行，然后我又改了一个路径。
+
+43.多页面的话，一个页面new一次 HtmlWebpackPlugin。文件名字路径写在filename里面。但是自己的js怎么办啊?
+44.chunks里面写的就是这个多页面引用的打包后的捆啊。
+45.接下来呢，剥离公共部分代码，还有抽离css

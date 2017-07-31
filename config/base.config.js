@@ -18,7 +18,14 @@ module.exports = function(){
 				root:path.resolve(__dirname,'../'),
 			}),
 			new HtmlWebpackPlugin({
-				title:'index'
+				filename:'index.html',
+				title:'index',
+				chunks:['js1']
+			}),
+			new HtmlWebpackPlugin({
+				filename:'page1.html',
+				title:'page',
+				chunks:['js99']
 			})
 		]
 	}
