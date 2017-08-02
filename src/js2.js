@@ -1,1 +1,3 @@
-console.log('js2')
+var jquery = require('./asserts/lib/jq.js');
+
+console.log(jquery);

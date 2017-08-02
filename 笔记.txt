@@ -84,3 +84,16 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 43.多页面的话，一个页面new一次 HtmlWebpackPlugin。文件名字路径写在filename里面。但是自己的js怎么办啊?
 44.chunks里面写的就是这个多页面引用的打包后的捆啊。
 45.接下来呢，剥离公共部分代码，还有抽离css
+
+46.file-loader:指示webpack将所需对象生产为一个文件，返回它的公共路径。
+47.url-loader:类似与file-loader，将所需对象加载为一个base64编码的url。
+48.我require html 代码片段，就需要html-loader。里面的src是直接写的。也没require图片。
+之前在模板html里面写的src估计是需要require(图片) + url-loader了。
+49.我直接在html-loader加载的html片段里加了一张图片，超过了url-limit的url。这是提醒我需要file-loader。
+好吧，url-loader和file-loader一块使用。
+理解错了，只写url-loader就行。file-loader要安装。
+50.使用html写模块，引入其他模块可以使用插值，require。我用pug。
+51.output.publicPath 页面引用外部资源的前缀路径。
+52.待会，html要改成pug
+53.我分模块怎么办？每一个js包都要引用jquery?
+54.剥离csshttps://github.com/webpack-contrib/extract-text-webpack-plugin

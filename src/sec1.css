@@ -1,0 +1,11 @@
+.eat{
+    width:300px;
+    height:30px;
+    background-color:blue;
+    background-image:url('./yellow.jpg');
+}
+
+.eat img{
+    width:30px;
+    height:20px;
+}

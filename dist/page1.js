@@ -1,0 +1,1 @@
+webpackJsonp([0],[,function(e,n,o){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var c=o(2),t=(o.n(c),o(0));console.log(t);var i=o(3);document.body.innerHTML=i},function(e,n){},function(e,n,o){e.exports="<div class=eat> <img src="+o(4)+" /> </div> "},function(e,n,o){e.exports=o.p+"af860d0368640415088bb341522cf1ab.jpg"}],[1]);

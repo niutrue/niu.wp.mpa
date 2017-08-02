@@ -4,29 +4,53 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var currentTarget = process.env.npm_lifecycle_event;
 
+var entry = {
+	'page1':'./src/js1.js',
+	'page2':'./src/js2.js'
+};
+
+var output = {
+	path:path.resolve(__dirname,'../dist')
+};
+
+var loaders = {
+	rules:[
+		{
+			test:/\.(png|jpg)$/,
+			use:['url-loader?limit=4000']
+		},
+		{
+			test:/\.html$/,
+			use:[
+				{
+					loader:'html-loader'
+				}
+			]
+		}
+	]
+};
+
+var plugins = [
+	new CleanWebpackPlugin(['dits'],{
+		root:path.resolve(__dirname,'../')
+	})
+];
+
+Object.keys(entry).forEach(function(key){
+	var arg = {
+		filename:key + '.html',
+		title:key,
+		inject:'true',
+		chunks:['common',key]
+	}
+	plugins.unshift(new HtmlWebpackPlugin(arg));
+});
+
 module.exports = function(){
 	return {
-		entry:{
-			js1:'./src/index.js',
-			js99:'./src/js2.js'
-		},
-		output:{
-			path:path.resolve(__dirname,'../dist')
-		},
-		plugins:[
-			new CleanWebpackPlugin(['dist'],{
-				root:path.resolve(__dirname,'../'),
-			}),
-			new HtmlWebpackPlugin({
-				filename:'index.html',
-				title:'index',
-				chunks:['js1']
-			}),
-			new HtmlWebpackPlugin({
-				filename:'page1.html',
-				title:'page',
-				chunks:['js99']
-			})
-		]
+		entry:entry,
+		output:output,
+		module:loaders,
+		plugins:plugins
 	}
 }
