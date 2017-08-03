@@ -1,1 +1,1 @@
-webpackJsonp([1],{5:function(o,n,c){var a=c(0);console.log(a)}},[5]);
+webpackJsonp([1],{7:function(c,n,s){"use strict"}},[7]);

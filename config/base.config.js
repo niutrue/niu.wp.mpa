@@ -5,8 +5,8 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 var currentTarget = process.env.npm_lifecycle_event;
 
 var entry = {
-	'page1':'./src/js1.js',
-	'page2':'./src/js2.js'
+	'page1':'./src/pages/page1/entry.js',
+	'page2':'./src/pages/page2/entry.js'
 };
 
 var output = {
@@ -16,16 +16,30 @@ var output = {
 var loaders = {
 	rules:[
 		{
+			test:/\.js$/,
+			exclude:/node_modules/,
+			use:{
+				loader:'babel-loader',
+				options:{
+					presets:['es2015']
+				}
+			}
+		},
+		{
 			test:/\.(png|jpg)$/,
 			use:['url-loader?limit=4000']
 		},
+		// {
+		// 	test:/\.html$/,
+		// 	use:[
+		// 		{
+		// 			loader:'html-loader'
+		// 		}
+		// 	]
+		// }
 		{
-			test:/\.html$/,
-			use:[
-				{
-					loader:'html-loader'
-				}
-			]
+			test:/\.pug/,
+			loaders:['html-loader','pug-html-loader']
 		}
 	]
 };

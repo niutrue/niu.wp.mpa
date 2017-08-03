@@ -9,8 +9,18 @@ var devConfig = {
 	module:{
 		rules:[
 			{
-	            test:/\.(scss|css)$/,
-	            loaders:['style-loader','css-loader']
+	            test:/\.(css|less)$/,
+	            loaders:['style-loader','css-loader?sourceMap','less-loader?sourceMap']
+	        },
+			{
+	            test:/\.js$/,
+				exclude:[/node_modules/,/asserts/],
+	            use:{
+	                loader:'jshint-loader',
+	                options:{
+	                    esversion:6
+	                }
+	            }
 	        }
 		]
 	},

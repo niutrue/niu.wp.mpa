@@ -13,10 +13,14 @@ baseConfig.plugins.push(
 );
 baseConfig.module.rules.push(
 	{
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader"
+          use: [{
+			  loader:'css-loader'
+		  },{
+			  loader:'less-loader'
+		  }]
         })
       }
 )

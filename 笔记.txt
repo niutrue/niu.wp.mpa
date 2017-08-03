@@ -97,3 +97,21 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 52.待会，html要改成pug
 53.我分模块怎么办？每一个js包都要引用jquery?
 54.剥离csshttps://github.com/webpack-contrib/extract-text-webpack-plugin
+55.生产模式，加了个 -p 就压缩了。
+56. npm install jshint jshint-loader --save-dev  需要安装两个才能验证。不想验证jquery    exclude:[/node_modules/,/asserts/]
+57.自己学写东西，看文档，看源码，看博客。自己总结。
+58.安装babel-core 再加一个babael-preset-es2015.两个都不能少，然后压缩出问题了。2017出错，但是2015没问题。
+https://webpack.js.org/loaders/babel-loader/#components/sidebar/sidebar.jsx
+59.使用less包括开发环境和生产环境。按照资料和我写的来就行。
+https://webpack.js.org/loaders/less-loader/#components/sidebar/sidebar.jsx
+https://github.com/webpack-contrib/extract-text-webpack-plugin
+60.完成pug的功能。我使用pug-html-loader加html-loader就满足了需求。pug中路径不需要require。
+61.这些，都是工具啊，有扩展功能。js,css,js才是根本。
+62.使用jquery的话直接npm安装就行了。注意模板。比如移动端。jquery这种库有两种安装方式。一种npm，一种传统引入。
+63.还有就是引入整个组件的问题。
+64.css我也加了源码图。
+.........可以设计文件夹了............
+65.使用流程，安装，加源码需要的文件夹，文件，修改配置，开始开发。主要是入口。
+66.pug里面找图片位置会很麻烦，使用绝对路径好了。新问题，如何在css,js中方便的找图。一个页面一张图吗？还是有公共的，也有私有的。去google，去stackoverflow，去githun源码。不懂就去问别人，用语言来交流。实习真的很重要。
+67.webpack是一个文件打包工具，可以将多个js,css等文件打包成一个。可以使用加载器打包其他各种类型的文件，比如新版本的js,css预编译器，html模板文件。利用这个特性加服务器特性加检测代码刷新浏览器热更新模块可以提高开发效率。而且，利用插件可以处理捆绑后的文件，比如把css分离出来。可以在开发环境和生产环境使用不同的加载器，插件，webpack配置来实现相应功能，满足不同开发场景的需求。
+68.以后做东西，出任务书，有目的，有要求。不要莫名其妙的昨晚。然后分支剧情。计划书，介绍，使用手册，说明文档，还有就是接下来选择剧情。任务总结。

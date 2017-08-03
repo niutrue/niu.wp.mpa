@@ -1,3 +1,3 @@
-var jquery = require('./asserts/lib/jq.js');
+var jquery = require('jquery');
 
 console.log(jquery);
