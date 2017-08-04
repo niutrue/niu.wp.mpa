@@ -1,16 +1,9 @@
-啥也别说了，一句一句比着写吧。
 
-1.webpack本地安装比较好
-2.npm-script  https://docs.npmjs.com/misc/scripts 使用npm-script来操作webpack
+
 3.webpack直接支持import export
-4.完全可以写两个配置文件，不怕麻烦的话。npm script里执行不同的文件名(猜测)
-5.webpack就是使用一个配置文件。基本格式是此文件导出一个对象
-6.知识点(文档里有):模块;配置;
-7.npm script可以直接通过包名来索引包，而不是通过完整的路径去
-8.指南:如何安装webpack
+
 9.source(src)是开发者编写的代码，distribution(dist)是压缩优化后的，最终被浏览器加载的浏览器中的代码
 
-10.需要一个配置文件，需要一个入口js，需要一个引入js的页面。最基本的。
 
 11.写成这样：module.exports = Config;
 function Config(env){
@@ -19,12 +12,10 @@ function Config(env){
 
 导出一个函数，函数可以接收到CLI命令的参数 --env production  前面是参数名字，后面是参数值
 
-12.本来在外面写一个webpack.config.js就够用了。可是呢，需要的webpack功能太多了，把webpack.config.js分解开来就好了。
 module.exports可以是一个对象，也可以是一个返回对象的函数。
 
 13.在base.config.js里面 通过process.env.npm_lifecycle_event来区分什么命令，比如，build和dev。主要是区分这两个环境。
 
-14.配置最重要的就是那个对象，我学的这个把对象属性拿出来作为属性来写了。
 15.resolve参数。改变模块解析的方式。
  resolve.alias:可以给文件的路径起一个小名，使用起来更加方便。
  resolve.extensions 自动解析扩展名。导入文件的时候不用加扩展名了。
@@ -49,8 +40,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 26.Object.assign() 把目标对象的所有可枚举的自有属性复制给一个对象然后返回。
 
 27.base.config导出了一个函数，函数返回了一个对象。这和直接返回对象有啥区别啊？
-28.dev.congig获取基本的config。设置dev对应的source-map，导出文件名。
-加入dev需要的加载器。
+
 29.使用webpack-merge合并了一个对象。和28的功能类似。导出一个返回对象的函数。
 30.分模块的js，只要引用了都是会执行的。不是指返回一个对象。是要把代码执行一遍的。
 31.config根据参数，获取dev模块。其实是一个函数，执行函数。获得一个最终的配置对象。
@@ -68,12 +58,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 ................
 35.output的path是绝对路径啊
 36.开始使用es6。字符串模板，常量用const。
-
-37.加参数 --watch 监视模式。文件有改动，自动编译。但是浏览器不自动刷新。
-38.提供简单的服务器，可以现场更新。安装 webpack-dev-server模块，npm-script改成 webpack-dev-server  不加--watch也行的。  contentBase:服务哪里的内容。
-39.热模块加载:允许所有种类的模块在运行时更新，而不是全部刷新。
-只更新改动的。
-需要有webpack插件，plugins里加 webpack.HotModuleReplacementPlugin  devServer 加hot参数
 
 40.当多个入口js。导出文件名为[name].bundle.js时。index上的文件名字需要手动添加。有hash更麻烦。
 使用html-webpack-plugin插件可以解决这个问题。是的,不用手动在页面改引入js的名字了。
@@ -115,3 +99,5 @@ https://github.com/webpack-contrib/extract-text-webpack-plugin
 66.pug里面找图片位置会很麻烦，使用绝对路径好了。新问题，如何在css,js中方便的找图。一个页面一张图吗？还是有公共的，也有私有的。去google，去stackoverflow，去githun源码。不懂就去问别人，用语言来交流。实习真的很重要。
 67.webpack是一个文件打包工具，可以将多个js,css等文件打包成一个。可以使用加载器打包其他各种类型的文件，比如新版本的js,css预编译器，html模板文件。利用这个特性加服务器特性加检测代码刷新浏览器热更新模块可以提高开发效率。而且，利用插件可以处理捆绑后的文件，比如把css分离出来。可以在开发环境和生产环境使用不同的加载器，插件，webpack配置来实现相应功能，满足不同开发场景的需求。
 68.以后做东西，出任务书，有目的，有要求。不要莫名其妙的昨晚。然后分支剧情。计划书，介绍，使用手册，说明文档，还有就是接下来选择剧情。任务总结。
+69.resolve的那个图片别名的话，js可以使用，pug和less不能使用。看来pug和less只能使用变量了。
+70.这一次，es6和vue和webpack和pug和less和js和css和html一起来吧！还有移动端，canvas，各种组件啥的。

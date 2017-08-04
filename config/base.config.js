@@ -29,20 +29,18 @@ var loaders = {
 			test:/\.(png|jpg)$/,
 			use:['url-loader?limit=4000']
 		},
-		// {
-		// 	test:/\.html$/,
-		// 	use:[
-		// 		{
-		// 			loader:'html-loader'
-		// 		}
-		// 	]
-		// }
 		{
 			test:/\.pug/,
 			loaders:['html-loader','pug-html-loader']
 		}
 	]
 };
+
+var resolve = {
+	alias:{
+		images:'../../asserts/images'
+	}
+}
 
 var plugins = [
 	new CleanWebpackPlugin(['dits'],{
@@ -65,6 +63,7 @@ module.exports = function(){
 		entry:entry,
 		output:output,
 		module:loaders,
-		plugins:plugins
+		plugins:plugins,
+		resolve:resolve
 	}
 }
