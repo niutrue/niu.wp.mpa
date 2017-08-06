@@ -30,7 +30,7 @@ var loaders = {
 			use:['url-loader?limit=4000']
 		},
 		{
-			test:/\.pug/,
+			test:/\.pug$/,
 			loaders:['html-loader','pug-html-loader']
 		}
 	]
